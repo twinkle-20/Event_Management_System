@@ -1,0 +1,54 @@
+{% extends 'events/base.html' %}
+{% load static %}
+{% block content %}
+<ul>
+    <li>
+        <a href="#">ABOUT US</a>
+    </li>
+    <li>
+        <a href="/userlogin/">LOGIN</a>
+    </li>
+    <li>
+        <a href="http://127.0.0.1:8000/">HOME</a>
+    </li>
+    <p style="font-size: x-large;color: white;">EVENTIA</p>
+</ul><br><br>
+    <div class="loginbox" style="width: 800px;height: 440px;">
+        <h1>REGISTER HERE!!!</h1>
+        <hr>
+        <form action="/register/" method="post">
+            {% csrf_token %} 
+            <div class="row">
+                <div class="column">
+                    <div class="form-group">
+                        <label for="username">NAME</label>
+                        <input type="text" name="name" class="form-control" placeholder="Enter your name"  autocomplete="off" required>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="password">PASSWORD</label>
+                        <input type="password" name="pass" class="form-control" placeholder="Enter your password"  autocomplete="off" required>
+                    </div><br>
+                </div>
+           
+                <div class="column">
+                    <div class="form-group">
+                        <label for="username">USERNAME</label>
+                        <input type="text" name="username" class="form-control" placeholder="Enter your username"  autocomplete="off" required>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="conpassword">CONFIRM PASSWORD</label>
+                        <input type="password" name="password" class="form-control" placeholder="Enter your password"  autocomplete="off" required>
+                    </div><br>
+                </div>
+                <input type="submit" class="btn btn-success btn-lg" name="submit"  value="SUBMIT">
+            </div>
+        </form>
+    </div>
+    <br><br>
+
+    {% if status %}
+    <script>
+        alert("{{status}}")
+    </script>
+    {% endif %}
+{% endblock %}

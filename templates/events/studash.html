@@ -1,0 +1,44 @@
+{% extends 'events/base.html' %}
+{% load static %}
+{% block content %}
+<ul>
+    <li>
+        <a href="/logout/">LOGOUT</a>
+    </li>
+    <li>
+        <a href="/studash/">ENROLLED EVENTS</a>
+    </li>
+    <li>
+        <a href="/vieweventspage/">VIEW EVENTS</a>
+    </li>
+    <p style="font-size: x-large;color: white;">EVENTIA</p>
+</ul><br><br>
+<div class="eventdetails">
+    <h1>REGISTERED EVENTS</h1>
+    <table style="width: 100%;">
+        <tr>
+            <th><h3>Event Name</h3></th>
+            <th><h3>Event Duration</h3></th>
+            <th><h3>Event Cost</h3></th>
+            <th><h3>Start Date</h3></th>
+            <th><h3>Student Name</h3></th>
+            <th><h3>Contact no.</h3></th>
+        </tr>
+        {% for i in details %} 
+        <tr>
+            <td><h5>{{i.EName}}</h5></td>
+            <td><h5>{{i.EDuration}}</h5></td>
+            <td><h5>{{i.ECost}}</h5></td>
+            <td><h5>{{i.EStartDate}}</h5></td>
+            <td><h5>{{i.StudName}}</h5></td>
+            <td><h5>{{i.ContactNo}}</h5></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% if msg %}
+    <script>
+        alert("{{msg}}")
+    </script>
+{% endif %}
+{% endblock %}

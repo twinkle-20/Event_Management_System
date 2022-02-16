@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/style.css' %} ">
+    <title>EMS</title>
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+    <div class="footer">
+    <div class="row" style="background-image: linear-gradient(#0F2027,#203A43,#2C5364);">
+       <div class="col">
+        <i class="fa fa-map-marker" aria-hidden="true" style="margin-left: 90px;"> </i> 
+            <h6><p style="margin-top: -20px;">21 Revolution Street <br> Paris,France</p></h6>
+        <i class="fa fa-phone" aria-hidden="true" style="margin-left: 90px;"></i>
+            <h6><p style="margin-top: -20px;">+1 55 670690</p></h6>
+        <i class="fa fa-envelope" aria-hidden="true" style="margin-left: 85px;"></i>
+            <h6><p style="margin-top: -20px;">eventia@gmail.com</p></h6><br><br>
+        </div>   
+        <div class="col" style="text-align: center;color: white;">
+                <h6><p>About Company</p></h6>
+                <h6><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+                    et dolore magna aliqua. Ut enim ad minim veniamLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+                    aliquip ex ea commodo consequat.</p></h6>
+                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+        </div>   
+    </div>
+    </div>
+</body>
+</html>

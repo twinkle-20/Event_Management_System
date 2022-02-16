@@ -1,0 +1,60 @@
+{% extends 'events/base.html' %}
+{% load static %}
+{% block content %}
+<ul>
+    <li>
+        <a href="/logout/">LOGOUT</a>
+    </li>
+    <li>
+        <a href="/studash/">ENROLLED EVENTS</a>
+    </li>
+    <li>
+        <a href="/vieweventspage/">VIEW EVENTS</a>
+    </li>
+    <p style="font-size: x-large;color: white;">EVENTIA</p>
+</ul><br><br>
+<div class="loginbox" style="width: 800px;height: 520px;">
+    <h1>PARTICIPATE HERE!!!</h1>
+    <hr>
+    <form action="/eventenrolled/" method="post">
+        {% csrf_token %} 
+        <div class="row">
+            {% for i in eventdetails %}
+            <div class="column">
+                <div class="form-group">
+                    <label for="eventname">EVENT NAME</label>
+                    <input type="text" name="evename" value="{{i.EventName}}" class="form-control" readonly>
+                </div><br>
+                <div class="form-group">
+                    <label for="eventcost">EVENT COST</label>
+                    <input type="text" name="evecost" value="{{i.EventCost}}" class="form-control" readonly>
+                </div><br>
+                {% for j in studata %}
+                <div class="form-group">
+                        <label for="studname">YOUR NAME</label>
+                        <input type="text" name="studname" value="{{j.Name}}" class="form-control" readonly>
+                </div><br> 
+                {% endfor %}
+            </div>
+       
+            <div class="column">
+                <div class="form-group">
+                    <label for="evedur">EVENT DURATION</label>
+                    <input type="text" name="evedur" value="{{i.EventDuration}}" class="form-control" readonly>
+                </div><br>
+                <div class="form-group">
+                    <label for="evestartdate">EVENT START DATE</label>
+                    <input type="text" name="evestartdate" value="{{i.EventStartDate}}" class="form-control" readonly>
+                </div><br>
+                <div class="form-group">
+                    <label for="contact">CONTACT NO.</label>
+                    <input type="text" name="phone" class="form-control" placeholder="Please enter your contact no." required>
+                </div><br>
+            </div>
+            <input type="submit" class="btn btn-success btn-lg" name="submit"  value="CLICK HERE TO PAY">
+            {% endfor %}
+        </div>
+    </form>
+</div>
+<br><br>
+{% endblock %}

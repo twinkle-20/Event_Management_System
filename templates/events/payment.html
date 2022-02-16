@@ -1,0 +1,86 @@
+{% extends 'events/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+  i {color:white;}
+</style>
+<ul>
+  <li>
+      <a href="/logout/">LOGOUT</a>
+  </li>
+  <li>
+      <a href="/studash/">ENROLLED EVENTS</a>
+  </li>
+  <li>
+      <a href="/vieweventspage/">VIEW EVENTS</a>
+  </li>
+  <p style="font-size: x-large;color: white;">EVENTIA</p>
+</ul><br><br>
+<div class="loginbox" style="width: 800px;height: 450px;">
+  <h1>PAY HERE!!!</h1>
+  <hr>
+  <form action="/studash/" method="post">
+      {% csrf_token %} 
+      <div class="row">
+          <div class="column">
+              <div class="form-group">
+							  <i class="fa fa-cc-visa"></i>
+                <label for="cardnum" class="control-label" style="color: white;">CARD NUMBER</label>
+							  <input type="text"  class="form-control" name="num" id="num" placeholder="enter card number" style="border: 1px solid white;background-color: white;" autocomplete="off" required>
+						  </div>
+   				 		<div class="form-group">
+							  <i class="fa fa-credit-card-alt"></i>
+                <label for="cvc" class="control-label" style="color: white;">CVC</label>
+							  <input type="Password" name="cvc" id="cvc" placeholder="Enter CVC Number" class="form-control" style="border: 1px solid white;background-color: white;" autocomplete="off" required>
+						  </div>
+              {% for i in amt %}
+				 		  <div class="form-group">
+							  <i class="fa fa-inr"></i>
+                <label for="amount" class="control-label" style="color: white;">AMOUNT</label>
+							  <input type="text" name="amt" id="amt" placeholder="Enter AMOUNT" class="form-control" style="border: 1px solid white;background-color: white;" autocomplete="off" value="{{i.ECost}}" readonly>
+						  </div>
+              {% endfor %}
+          </div>
+     
+          <div class="column">
+              <div class="form-group">
+                <i class="fa fa-user-circle"></i>
+                <label for="cardhname" class="control-label" style="color: white;">CARD HOLDER NAME</label>
+                <input class="form-control" name="name" id="name" placeholder="Enter Card Holder Name" type="text" style="border: 1px solid white;background-color: white;" autocomplete="off" required>
+              </div><br>
+              <div class="form-group">
+                <i class="fa fa-calendar"></i>
+                <label for="cc-exp" class="control-label" style="color: white;">CARD VALIDITY</label>
+                 <select class="form-control" name="month">
+                   <option>January</option>
+                   <option>February</option>
+                   <option>March</option>
+                   <option>April</option>
+                   <option>May</option>
+                   <option>June</option>
+                   <option>July</option>
+                   <option>August</option>
+                   <option>September</option>
+                   <option>October</option>
+                   <option>November</option>
+                   <option>December</option>
+                 </select>&nbsp;&nbsp;&nbsp;&nbsp;
+                 <select class="form-control" name="year">
+                   <option>2022</option>
+                   <option>2023</option>
+                   <option>2024</option>
+                   <option>2025</option>
+                   <option>2026</option>
+                   <option>2027</option>
+                   <option>2028</option>
+                   <option>2029</option>
+                   <option>2030</option>
+                 </select>
+                </div>
+          </div>
+          <input type="submit" class="btn btn-success btn-lg" name="submit"  value="PAY">
+      </div>
+  </form>
+</div>
+<br><br>
+{% endblock %}

@@ -1,0 +1,93 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(18, 104, 153);
+  }
+  li {
+    float: right;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  li a:hover {
+    background-color: cornsilk;
+  }
+  
+  .column
+  {
+      width: 50%;
+      padding: 10px;
+  }
+  .footer
+  {
+      color: white;
+  }
+  h6 p{
+      margin-left: 105px;
+  }
+  .footer i
+  {
+      margin-left: 90px;
+  }
+  /*-----------------LOGIN BOX-------------------------*/
+  .loginbox
+  {
+    padding: 10px;
+    box-shadow: 5px 5px 5px 5px;
+    margin:auto;
+    background-image: linear-gradient(#373B44,#4286f4);
+    border: 5px groove white;
+  }
+  .loginbox h1
+  {
+    color: white;
+    text-align: center;
+  }
+  .loginbox hr{
+    height: 5px;
+    color: black;
+  }
+  .loginbox label
+  {
+    color: white;
+    font-size: x-large;
+    margin: 5px;
+  }
+  .loginbox a
+  {
+    color: white;
+    text-align: center;
+  }
+  /*-----------------------------------------------------------------------------*/
+.eventdetails td
+{
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 0px;
+    width: 5%;
+    background-color:cadetblue;
+}
+.eventdetails th
+{
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 5px;
+    background-color: grey;
+    color: white;
+}
+.eventdetails td img
+{
+    display: block;
+    width: 100%;
+}
+.eventdetails h1
+{
+    color: midnightblue;
+}

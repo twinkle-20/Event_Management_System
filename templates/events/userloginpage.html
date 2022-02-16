@@ -1,0 +1,37 @@
+{% extends 'events/base.html' %}
+{% load static %}
+{% block content %}
+<ul>
+    <li>
+        <a href="#">ABOUT US</a>
+    </li>
+    <li>
+        <a href="http://127.0.0.1:8000/">HOME</a>
+    </li>
+    <p style="font-size: x-large;color: white;">EVENTIA</p>
+</ul><br><br>
+    <div class="loginbox" style=" width: 500px;height: 430px;">
+        <h1>LOGIN HERE!!!</h1>
+        <hr>
+        <form action="/userlogin/" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">USERNAME</label>
+                <input type="text" name="username" class="form-control" placeholder="Enter your username"  autocomplete="off" required>
+            </div><br>
+            <div class="form-group">
+                <label for="password">PASSWORD</label>
+                <input type="password" name="password" class="form-control" placeholder="Enter your password"  autocomplete="off" required><br>
+                <a href="/register/" style="text-align: center;">New user? Create an account here</a>
+            </div><br>
+            <input type="submit" class="btn btn-success btn-lg" name="submit"  value="SUBMIT">
+        </form>
+    </div>
+    <br><br>
+
+    {% if msg %}
+        <script>
+            alert("{{msg}}")
+        </script>
+    {% endif %}
+{% endblock %}

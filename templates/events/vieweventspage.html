@@ -1,0 +1,49 @@
+{% extends 'events/base.html' %}
+{% load static %}
+{% block content %}
+<ul>
+    <li>
+        <a href="/logout/">LOGOUT</a>
+    </li>
+    <li>
+        <a href="/studash/">ENROLLED EVENTS</a>
+    </li>
+    <li>
+        <a href="/vieweventspage/">VIEW EVENTS</a>
+    </li>
+    <p style="font-size: x-large;color: white;">EVENTIA</p>
+</ul><br><br>
+<div class="eventdetails">
+    <h1>HELLO THIS IS EVENT PAGES</h1>
+    <table style="width: 100%;">
+        <tr>
+            <th><h3>Event Name</h3></th>
+            <th><h3>Event Image</h3></th>
+            <th><h3>Description</h3></th>
+            <th><h3>Event Type</h3></th>
+            <th><h3>Event Cost</h3></th>
+            <th><h3>Event Duration</h3></th>
+            <th><h3>Start Date</h3></th>
+            <th><h3>Enroll</h3></th>
+        </tr>
+        {% for i in Events %} 
+        <tr>
+            <td><h5>{{i.EventName}}</h5></td>
+            <td><img src="{{i.EventImg.url}}" height="20%" width="20%"></td>
+            <td><h5>{{i.EventDesc}}</h5></td>
+            <td><h5>{{i.EventType}}</h5></td>
+            <td><h5>{{i.EventCost}}</h5></td>
+            <td><h5>{{i.EventDuration}}</h5></td>
+            <td><h5>{{i.EventStartDate}}</h5></td>
+            <td><a href="/eventenroll/{{i.id}}/" class="btn btn-success">Click Me</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div><br><br><br><br><br><br><br><br><br><br><br>
+{% if msgeve %}
+<script>
+    alert("{{msgeve}}")
+</script>
+{% endif %}
+
+{% endblock %}
